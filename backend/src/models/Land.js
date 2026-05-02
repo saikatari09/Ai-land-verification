@@ -396,7 +396,6 @@ const landSchema = new mongoose.Schema(
 );
 
 // Create indexes
-landSchema.index({ landId: 1 });
 landSchema.index({ surveyNumber: 1 });
 landSchema.index({ 'owner.name': 1 });
 landSchema.index({ 'location.city': 1 });
