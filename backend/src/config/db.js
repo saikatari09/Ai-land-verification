@@ -1,14 +1,9 @@
 const mongoose = require('mongoose');
 
-const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.MONGO_URI);
-    console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
-  } catch (error) {
-    console.error(`⚠️ MongoDB Connection Error: ${error.message}`);
-    console.log('📝 Running in offline mode - database features disabled');
-    process.exit(1);
-  }
+const connectDB = () => {
+  mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log('MongoDB connected'))
+    .catch((err) => console.log(err));
 };
 
 module.exports = connectDB;
