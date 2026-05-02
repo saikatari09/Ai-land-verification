@@ -63,7 +63,7 @@ app.get('*', (req, res) => {
   }
 });
 
-const PORT = process.env.RAILWAY_STATIC_URL ? process.env.PORT : (process.env.BACKEND_PORT || 3000);
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`✅ Backend API Server running on http://localhost:${PORT}`);
 });
